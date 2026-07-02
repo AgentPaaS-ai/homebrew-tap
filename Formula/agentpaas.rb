@@ -11,20 +11,20 @@ class Agentpaas < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v0.1.0/agentpaas_0.1.0_darwin_amd64.tar.gz"
-      sha256 "42761048b8275ecbb63a83c6736afb51d815d9e68803b8ee0ebd528163761c82"
+      sha256 "c79f43b007465a8f5c95433e4d10638530124d1ae7d3be17f5cb3e90e1f66823"
 
       define_method(:install) do
-        bin.install "agent"
+        bin.install "agentpaas"
         bin.install "agentpaasd"
         bin.install "agentpaas-harness-linux"
       end
     end
     if Hardware::CPU.arm?
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v0.1.0/agentpaas_0.1.0_darwin_arm64.tar.gz"
-      sha256 "6fa3f9eb86c0a5d52f2bf3e6c58691f3486014c648f7e039e8cab6934fb8aab8"
+      sha256 "6844693b73b1dd2793b087e18a41ff8aa46857fb9ff1984f1f4748517997e31d"
 
       define_method(:install) do
-        bin.install "agent"
+        bin.install "agentpaas"
         bin.install "agentpaasd"
         bin.install "agentpaas-harness-linux"
       end
@@ -34,9 +34,9 @@ class Agentpaas < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v0.1.0/agentpaas_0.1.0_linux_arm64.tar.gz"
-      sha256 "fdfff5f92700254df8f970d9c8a82f935fd98452f0644f5d9026247bd8c086f8"
+      sha256 "587970188a02fd866b6bf3a31c9c47042ff81feae9a30a4b89ab658b25a3d8a3"
       define_method(:install) do
-        bin.install "agent"
+        bin.install "agentpaas"
         bin.install "agentpaasd"
         bin.install "agentpaas-harness-linux"
       end
@@ -44,6 +44,6 @@ class Agentpaas < Formula
   end
 
   test do
-    system "#{bin}/agent", "version"
+    system "#{bin}/agentpaas", "version"
   end
 end
