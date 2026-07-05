@@ -4,19 +4,19 @@ cask "agentpaas" do
 
   on_macos do
     on_intel do
-      sha256 "c3868c3aab25797fb76d3ed8568bace6261a5cacd1e0f8c5fa2c399a08cfd9c3"
+      sha256 "27e1b0ca5dac4559f9457b8cb081fd5c86f964a7794a6179a59d202c535ea1bb"
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
-      sha256 "871397088fd2fd646f497345772c53a1e27218621b886a286b5030cbfea641f1"
+      sha256 "ab12e97e9eeb9121cd89755cecf2f49988ac5211c3d8be93639d05848a197bb3"
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_arm do
-      sha256 "d5bd6ed246c428374ded8045e9aab3e03dc2baa5112b807561cca77c67eabcba"
-      url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_harness_#{version}_linux_arm64.tar.gz"
+      sha256 "c25a32cd64c7c4ab88d11d9ff0f6cf4c6d939dfb6e0f2d63ef63fea5711b1b44"
+      url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_linux_arm64.tar.gz"
     end
   end
 
@@ -30,6 +30,7 @@ cask "agentpaas" do
 
   binary "agentpaas"
   binary "agentpaasd"
+  binary "agentpaas-harness-linux"
 
   # No zap stanza required
 
