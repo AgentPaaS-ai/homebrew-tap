@@ -4,11 +4,11 @@ cask "agentpaas" do
 
   on_macos do
     on_intel do
-      sha256 "47dd9d2777fb8c0062fcdab34cc3fac98a9f75eec38e68df83914b3ba2be3d41"
+      sha256 "6649e2eec6fb4b16c0da7c6aa8f99cbcc76b67563f6b8cfca94de138de24c64a"
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
-      sha256 "9e67b146819da8739ac9c5fc1fd275d17a5a5ec80fc203059f94e4cf1d868cfe"
+      sha256 "a7f71a644905859b11e8cb78fa3f181127d49a7f3bd1525584448c398df4827f"
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_darwin_arm64.tar.gz"
     end
   end
