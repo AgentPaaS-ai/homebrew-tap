@@ -4,11 +4,11 @@ cask "agentpaas" do
 
   on_macos do
     on_intel do
-      sha256 "e2530d36b0b1a6b282802e7bb84c82bd38052fb78638b181349214d4b224effb"
+      sha256 "b53edee232a86827c3ecf59068b84df5283b48d9d6cccc7e972afa42d08b1148"
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
-      sha256 "4d3b4b199439818177ed564fbbf820a47348a6bf430dd1d27d61f5f09f624ccf"
+      sha256 "6873ebc35c071b27cbf4a0ae66f982cf0281615a7a8cd995ec4e8a1194b15a78"
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_darwin_arm64.tar.gz"
     end
   end
@@ -24,6 +24,7 @@ cask "agentpaas" do
   binary "agentpaas"
   binary "agentpaasd"
   binary "agentpaas-harness-linux"
+  binary "agentpaas-harness-linux-amd64"
 
   # No zap stanza required
 
