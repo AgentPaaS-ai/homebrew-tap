@@ -26,6 +26,14 @@ cask "agentpaas" do
   binary "agentpaas-harness-linux"
   binary "agentpaas-harness-linux-amd64"
 
+  postflight do
+    if OS.mac?
+      %w[agentpaas agentpaasd agentpaas-harness-linux agentpaas-harness-linux-amd64].each do |name|
+        system_command "/usr/bin/xattr", args: ["-cr", "#{staged_path}/#{name}"]
+      end
+    end
+  end
+
   # No zap stanza required
 
 end
