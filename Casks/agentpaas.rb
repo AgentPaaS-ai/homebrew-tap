@@ -4,11 +4,11 @@ cask "agentpaas" do
 
   on_macos do
     on_intel do
-      sha256 "27211c2c68ee7078502f606146e621b6f99c44590707a52fb489f7ddf2686d7a"
+      sha256 "9d7fc0131bc12fb260cec21479bb5b105dfe26029e4a69cb5822a873c57dcac5"
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
-      sha256 "bf5c482df677e90776093cba5c9d78054c7e65fb5af958febc16262af16c98b4"
+      sha256 "ce18dd945f8a0ad3b5e5fad8c48aa08d426d0dd21885b89d1c5853aa30c202e2"
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_darwin_arm64.tar.gz"
     end
   end
@@ -25,6 +25,14 @@ cask "agentpaas" do
   binary "agentpaasd"
   binary "agentpaas-harness-linux"
   binary "agentpaas-harness-linux-amd64"
+
+  postflight do
+    if OS.mac?
+      %w[agentpaas agentpaasd agentpaas-harness-linux agentpaas-harness-linux-amd64].each do |name|
+        system_command "/usr/bin/xattr", args: ["-cr", "#{staged_path}/#{name}"]
+      end
+    end
+  end
 
   # No zap stanza required
 
