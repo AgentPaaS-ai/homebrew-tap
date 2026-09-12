@@ -21,6 +21,8 @@ cask "agentpaas" do
     skip "Auto-generated on release."
   end
 
+  depends_on :macos
+
   binary "agentpaas"
   binary "agentpaasd"
   binary "agentpaas-harness-linux"
