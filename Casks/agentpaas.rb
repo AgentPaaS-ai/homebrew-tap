@@ -2,15 +2,15 @@
 cask "agentpaas" do
   depends_on :macos
 
-  version "0.4.2"
+  version "0.5.0"
 
   on_macos do
     on_intel do
-      sha256 "1cf8c4e88067c3c04c267cb89a6fc65760dd63af6deee70bf27ddc1c4f1b6003"
+      sha256 "31eada73052e6450cb179a68b169084918f45f3c4363bc24dfa76c2695fc0ec5"
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
-      sha256 "0c0a0689b7d4971b4cc01189f89a75b6408aea60107ed0ec61e81fae467a6ef9"
+      sha256 "d7ac89676ba4a59442dd7803e1d915e783cebbaddcf38d157a753a69f4acd5e7"
       url "https://github.com/AgentPaaS-ai/agentpaas/releases/download/v#{version}/agentpaas_#{version}_darwin_arm64.tar.gz"
     end
   end
@@ -25,12 +25,13 @@ cask "agentpaas" do
 
   binary "agentpaas"
   binary "agentpaasd"
+  binary "agentpaas-mcp"
   binary "agentpaas-harness-linux"
   binary "agentpaas-harness-linux-amd64"
 
   postflight do
     if OS.mac?
-      %w[agentpaas agentpaasd agentpaas-harness-linux agentpaas-harness-linux-amd64].each do |name|
+      %w[agentpaas agentpaasd agentpaas-mcp agentpaas-harness-linux agentpaas-harness-linux-amd64].each do |name|
         system_command "/usr/bin/xattr", args: ["-cr", "#{staged_path}/#{name}"]
       end
     end
